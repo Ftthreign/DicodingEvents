@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/navigation_upcoming_event"
+        android:icon="@drawable/baseline_calendar_month_24"
+        android:title="@string/bottom_title_upcoming_event" />
+
+    <item
+        android:id="@+id/navigation_finished_event"
+        android:icon="@drawable/outline_checklist_24"
+        android:title="@string/bottom_title_finished_event" />
+
+</menu>

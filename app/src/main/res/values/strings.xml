@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">DicodingEvent</string>
+    <string name="title_home">Home</string>
+    <string name="bottom_title_upcoming_event">Upcoming</string>
+    <string name="bottom_title_finished_event">Finished</string>
+    <string name="title_upcoming_event">Upcoming Event</string>
+    <string name="title_finished_event">Finished Event</string>
+    <string name="page_title_home">Dicoding Event</string>
+
+    <!--
+            IMAGE CONTENT DESCRIPTION
+    -->
+    <string name="event_image_title">Event Dicoding</string>
+</resources>
