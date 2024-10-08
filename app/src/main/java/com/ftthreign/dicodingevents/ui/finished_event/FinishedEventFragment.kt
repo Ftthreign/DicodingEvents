@@ -28,7 +28,7 @@ class FinishedEventFragment : Fragment() {
         _binding = FragmentFinishedEventBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textNotifications
+        val textView: TextView = binding.textView2
         finishedEventViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }

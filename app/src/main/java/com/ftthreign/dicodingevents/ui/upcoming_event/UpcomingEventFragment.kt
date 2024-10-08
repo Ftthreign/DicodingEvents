@@ -28,7 +28,7 @@ class UpcomingEventFragment : Fragment() {
         _binding = FragmentUpcomingEventBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textDashboard
+        val textView: TextView = binding.titleUpcoming
         upcomingEventViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }

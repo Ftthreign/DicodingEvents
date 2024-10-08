@@ -6,9 +6,24 @@
     <string name="title_upcoming_event">Upcoming Event</string>
     <string name="title_finished_event">Finished Event</string>
     <string name="page_title_home">Dicoding Event</string>
+    <style name="page_title_upcoming">Upcoming Event</style>
+    <string name="page_title_finished">Finished Event</string>
+    <string name="searchbar_hint">Masukkan Nama Event</string>
+
 
     <!--
             IMAGE CONTENT DESCRIPTION
     -->
     <string name="event_image_title">Event Dicoding</string>
+
+    <!--
+            DETAIL PAGE STRING
+    -->
+    <string name="image_event">Event Image</string>
+    <string name="owner_name">PENYELENGGARA</string>
+    <string name="begin_time">JADWAL PELAKSANAAN</string>
+    <string name="start_event">Mulai</string>
+    <string name="end_event">Selesai</string>
+    <string name="quota">QUOTA</string>
+    <string name="register">REGISTER</string>
 </resources>
