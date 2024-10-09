@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -32,11 +34,13 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/finished_event"
-        android:layout_width="414dp"
-        android:layout_height="227dp"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="72dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.522"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:listitem="@layout/layout_item" />
@@ -45,12 +49,14 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
         android:background="?android:attr/listDivider"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/finished_event" />
 
     <TextView
         android:id="@+id/textView"
@@ -58,20 +64,23 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         android:text="@string/title_finished_event"
         app:layout_constraintBottom_toTopOf="@+id/upcoming_event"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/upcoming_event" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/upcoming_event"
-        android:layout_width="414dp"
-        android:layout_height="300dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="390dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         tools:layoutMode="clipBounds"
         tools:listitem="@layout/layout_item" />
 </androidx.constraintlayout.widget.ConstraintLayout>
