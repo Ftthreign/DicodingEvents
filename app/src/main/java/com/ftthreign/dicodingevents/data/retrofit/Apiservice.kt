@@ -1,6 +1,7 @@
 package com.ftthreign.dicodingevents.data.retrofit
 
 import com.ftthreign.dicodingevents.data.response.EventsResponse
+import com.ftthreign.dicodingevents.data.response.DetailEventsResponse
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -16,6 +17,14 @@ interface Apiservice {
     @GET("events/{id}")
     fun getEventDetail(
         @Path("id")
-        id: String
-    ): Call<EventsResponse>
+        id: Int
+    ): Call<DetailEventsResponse>
+
+    @GET("events")
+    fun searchEvents(
+        @Query("active")
+        active: Int,
+        @Query("q")
+        query: String
+    ) : Call<EventsResponse>
 }

@@ -1,31 +1,20 @@
- package com.ftthreign.dicodingevents.data.response
+package com.ftthreign.dicodingevents.data.response
 
 import com.google.gson.annotations.SerializedName
 
-data class EventsResponse(
-
-	@field:SerializedName("listEvents")
-	val listEvents: List<ListEventsItem>,
+data class DetailEventsResponse(
 
 	@field:SerializedName("error")
 	val error: Boolean,
 
 	@field:SerializedName("message")
-	val message: String
+	val message: String,
+
+	@field:SerializedName("event")
+	val event: Event
 )
 
-data class EventOverview(
-	@field:SerializedName("mediaCover")
-	val mediaCover: String,
-
-	@field:SerializedName("name")
-	val name : String,
-
-	@field:SerializedName("id")
-	val id : Int
-)
-
-data class ListEventsItem(
+data class Event(
 
 	@field:SerializedName("summary")
 	val summary: String,

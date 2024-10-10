@@ -28,7 +28,6 @@
             card_view:layout_constraintTop_toTopOf="parent"
             tools:ignore="ImageContrastCheck,MissingConstraints"
             tools:src="@tools:sample/avatars" />
-
         <TextView
             android:id="@+id/data_title"
             android:layout_width="match_parent"

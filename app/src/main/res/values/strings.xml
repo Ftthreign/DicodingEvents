@@ -9,6 +9,7 @@
     <style name="page_title_upcoming">Upcoming Event</style>
     <string name="page_title_finished">Finished Event</string>
     <string name="searchbar_hint">Masukkan Nama Event</string>
+    <string name="error_message">Anda tidak terhubung dengan Internet :(</string>
 
 
     <!--
@@ -25,5 +26,6 @@
     <string name="start_event">Mulai</string>
     <string name="end_event">Selesai</string>
     <string name="quota">QUOTA</string>
+    <string name="quota_left">SISA KUOTA</string>
     <string name="register">REGISTER</string>
 </resources>

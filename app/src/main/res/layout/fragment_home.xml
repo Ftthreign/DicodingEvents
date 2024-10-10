@@ -9,6 +9,7 @@
     tools:context=".ui.home.HomeFragment">
 
     <TextView
+        android:id="@+id/page_title"
         style="@style/PageTitle"
         android:layout_width="match_parent"
         android:layout_height="32dp"
@@ -46,6 +47,7 @@
         tools:listitem="@layout/layout_item" />
 
     <View
+        android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginStart="8dp"
@@ -53,13 +55,13 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
         android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintBottom_toTopOf="@+id/finished_event_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/finished_event" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/finished_event_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -70,17 +72,54 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/upcoming_event" />
 
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progress_bar_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        app:layout_constraintBottom_toBottomOf="@+id/finished_event"
+        app:layout_constraintEnd_toEndOf="@+id/finished_event"
+        app:layout_constraintStart_toStartOf="@+id/finished_event"
+        app:layout_constraintTop_toTopOf="@+id/finished_event" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/upcoming_event"
         android:layout_width="0dp"
-        android:layout_height="390dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/finished_event_title"
         tools:layoutMode="clipBounds"
         tools:listitem="@layout/layout_item" />
+
+    <TextView
+        android:id="@+id/error_message"
+        style="@style/DescriptionTextTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        tools:text="@string/error_message"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/finished_event_title"
+        tools:ignore="TextContrastCheck" />
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progress_bar_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:indeterminate="true"
+        app:layout_constraintEnd_toEndOf="@+id/upcoming_event"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/upcoming_event"
+        app:layout_constraintTop_toTopOf="@+id/upcoming_event" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

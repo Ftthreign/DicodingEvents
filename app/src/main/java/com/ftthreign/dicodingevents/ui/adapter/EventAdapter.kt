@@ -1,5 +1,7 @@
 package com.ftthreign.dicodingevents.ui.adapter
 
+import android.content.Intent
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -7,6 +9,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.ftthreign.dicodingevents.data.response.EventOverview
 import com.ftthreign.dicodingevents.databinding.LayoutItemBinding
+import com.ftthreign.dicodingevents.ui.detail.DetailActivity
 import com.squareup.picasso.Picasso
 
 class EventAdapter : ListAdapter<EventOverview, EventAdapter.ViewHolder>(
@@ -18,6 +21,14 @@ DIFF_CALLBACK) {
             Picasso.get()
                 .load(mediaCover)
                 .into(binding.imgItemPhoto)
+            binding.root.setOnClickListener {
+                val bundle = Bundle()
+                bundle.putInt(DetailActivity.EVENT_ID, data.id)
+
+                val intent = Intent(binding.root.context, DetailActivity::class.java)
+                intent.putExtras(bundle)
+                binding.root.context.startActivity(intent)
+            }
         }
     }
 

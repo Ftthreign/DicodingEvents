@@ -32,4 +32,29 @@
         app:layout_constraintTop_toBottomOf="@+id/title_upcoming"
         tools:listitem="@layout/layout_item" />
 
+    <TextView
+        android:id="@+id/error_message"
+        style="@style/DescriptionTextTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        tools:text="@string/error_message"
+        app:layout_constraintBottom_toTopOf="@+id/upcoming_event"
+        app:layout_constraintEnd_toEndOf="@+id/title_upcoming"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/title_upcoming"
+        tools:ignore="TextContrastCheck" />
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progress_bar_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        app:layout_constraintBottom_toBottomOf="@+id/upcoming_event"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/upcoming_event"
+        app:layout_constraintTop_toTopOf="@+id/upcoming_event" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
