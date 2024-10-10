@@ -49,17 +49,19 @@ class HomeFragment : Fragment() {
             showLoading(isLoading)
         }
 
-        homeViewModel.errorMessage.observe(viewLifecycleOwner){errorMessage->
-            if(errorMessage != null) {
-                binding.errorMessage.text = errorMessage
-                binding.errorMessage.visibility = View.VISIBLE
-                binding.pageTitle.visibility = View.GONE
-                binding.finishedEventTitle.visibility = View.GONE
-                binding.dicodingEvent.visibility = View.GONE
-                binding.upcomingEvent.visibility = View.GONE
-                binding.finishedEvent.visibility = View.GONE
-                binding.progressBar1.visibility = View.GONE
-                binding.progressBar2.visibility = View.GONE
+        homeViewModel.errorMessage.observe(viewLifecycleOwner){errMessage->
+            errMessage?.let {
+                binding.apply {
+                    errorMessage.text = it
+                    errorMessage.visibility = View.VISIBLE
+                    pageTitle.visibility = View.GONE
+                    finishedEventTitle.visibility = View.GONE
+                    dicodingEvent.visibility = View.GONE
+                    upcomingEvent.visibility = View.GONE
+                    finishedEvent.visibility = View.GONE
+                    progressBar1.visibility = View.GONE
+                    progressBar2.visibility = View.GONE
+                }
             }
         }
 

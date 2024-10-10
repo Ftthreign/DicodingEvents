@@ -25,26 +25,6 @@ class FinishedEventFragment : Fragment() {
         _binding = FragmentFinishedEventBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        finishedEventViewModel.finishedEvent.observe(viewLifecycleOwner){event->
-            eventAdapter.submitList(event)
-        }
-
-        finishedEventViewModel.isLoading.observe(viewLifecycleOwner){isLoading->
-            showLoading(isLoading)
-        }
-
-        finishedEventViewModel.errorMessage.observe(viewLifecycleOwner) { errorMessage ->
-            if(errorMessage != null) {
-                binding.errorMessage.text = errorMessage
-                binding.errorMessage.visibility = View.VISIBLE
-                binding.titleFinished.visibility = View.GONE
-                binding.progressBar1.visibility = View.GONE
-                binding.searchBar.visibility = View.GONE
-                binding.searchView.visibility = View.GONE
-                binding.finishedEvent.visibility = View.GONE
-            }
-        }
-
         eventAdapter = EventAdapter()
         binding.finishedEvent.layoutManager = LinearLayoutManager(context)
         binding.finishedEvent.adapter = eventAdapter
@@ -66,13 +46,37 @@ class FinishedEventFragment : Fragment() {
         return root
     }
 
-    private fun showLoading(isLoading : Boolean) {
-        if(isLoading) {
-            binding.progressBar1.visibility = View.VISIBLE
-        } else {
-            binding.progressBar1.visibility = View.GONE
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        finishedEventViewModel.finishedEvent.observe(viewLifecycleOwner){event->
+            eventAdapter.submitList(event)
+        }
+
+        finishedEventViewModel.isLoading.observe(viewLifecycleOwner){isLoading->
+            showLoading(isLoading)
+        }
+
+        finishedEventViewModel.errorMessage.observe(viewLifecycleOwner) { errMessage ->
+            errMessage?.let {
+                binding.apply {
+                    errorMessage.text = it
+                    errorMessage.visibility = View.VISIBLE
+                    titleFinished.visibility = View.GONE
+                    progressBar1.visibility = View.GONE
+                    searchBar.visibility = View.GONE
+                    searchView.visibility = View.GONE
+                    finishedEvent.visibility = View.GONE
+                }
+            }
+
         }
     }
+
+    private fun showLoading(isLoading : Boolean) {
+        binding.progressBar1.visibility = if(isLoading) View.VISIBLE else View.GONE
+    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

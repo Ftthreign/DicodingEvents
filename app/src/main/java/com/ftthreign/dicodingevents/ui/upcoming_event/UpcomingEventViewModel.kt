@@ -29,8 +29,8 @@ class UpcomingEventViewModel : ViewModel() {
                 call: Call<EventsResponse>,
                 response: Response<EventsResponse>
             ) {
-                _isLoading.value = false
                 if(response.isSuccessful){
+                    _isLoading.value = false
                     val responseBody = response.body()
                     if(responseBody != null) {
                         val eventList: List<EventOverview> = responseBody.listEvents.map {event->

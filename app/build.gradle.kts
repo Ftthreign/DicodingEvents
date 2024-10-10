@@ -14,6 +14,8 @@ android {
         versionCode = 1
         versionName = "1.0"
 
+        val url = "https://event-api.dicoding.dev/"
+        buildConfigField("String", "BASE_URL", "\"$url\"")
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 

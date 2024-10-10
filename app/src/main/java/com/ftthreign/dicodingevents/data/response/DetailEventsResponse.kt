@@ -3,10 +3,6 @@ package com.ftthreign.dicodingevents.data.response
 import com.google.gson.annotations.SerializedName
 
 data class DetailEventsResponse(
-
-	@field:SerializedName("error")
-	val error: Boolean,
-
 	@field:SerializedName("message")
 	val message: String,
 

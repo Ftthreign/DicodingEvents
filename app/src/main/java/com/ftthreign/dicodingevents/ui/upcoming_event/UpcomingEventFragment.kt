@@ -23,9 +23,13 @@ class UpcomingEventFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
         _binding = FragmentUpcomingEventBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        val root = binding.root
+        return root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         upcomingEventViewModel.upcomingEvent.observe(viewLifecycleOwner){event->
             adapter.submitList(event)
@@ -35,13 +39,15 @@ class UpcomingEventFragment : Fragment() {
             showLoading(isLoading)
         }
 
-        upcomingEventViewModel.errorMessage.observe(viewLifecycleOwner){errorMessage ->
-            if(errorMessage != null) {
-                binding.errorMessage.text = errorMessage
-                binding.errorMessage.visibility = View.VISIBLE
-                binding.titleUpcoming.visibility = View.GONE
-                binding.upcomingEvent.visibility = View.GONE
-                binding.progressBar1.visibility = View.GONE
+        upcomingEventViewModel.errorMessage.observe(viewLifecycleOwner){errMessage ->
+            errMessage?.let {
+                binding.apply {
+                    errorMessage.text = it
+                    errorMessage.visibility = View.VISIBLE
+                    titleUpcoming.visibility = View.GONE
+                    upcomingEvent.visibility = View.GONE
+                    progressBar1.visibility = View.GONE
+                }
             }
         }
 
@@ -50,16 +56,11 @@ class UpcomingEventFragment : Fragment() {
         binding.upcomingEvent.adapter = adapter
 
         upcomingEventViewModel.findUpcomingEvent()
-
-        return root
     }
 
+
     private fun showLoading(isLoading : Boolean) {
-        if(isLoading) {
-            binding.progressBar1.visibility = View.VISIBLE
-        } else {
-            binding.progressBar1.visibility = View.GONE
-        }
+        binding.progressBar1.visibility = if(isLoading) View.VISIBLE else View.GONE
     }
 
     override fun onDestroyView() {

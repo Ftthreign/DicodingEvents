@@ -7,6 +7,7 @@ import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.text.HtmlCompat
+import androidx.core.view.isVisible
 import com.ftthreign.dicodingevents.databinding.ActivityDetailBinding
 import com.squareup.picasso.Picasso
 
@@ -30,24 +31,26 @@ class DetailActivity : AppCompatActivity() {
 
     private fun observeViewModel() {
         viewModel.eventDetail.observe(this) {
-            it.let { event ->
-                binding.eventName.text = event.name
-                binding.eventDescription.text = HtmlCompat.fromHtml(
-                    event.description, HtmlCompat.FROM_HTML_MODE_LEGACY
-                )
-                binding.ownerName.text = event.ownerName
-                binding.eventStartTime.text = event.beginTime
-                binding.eventEndTime.text = event.endTime
-                binding.eventQuota.text = event.quota.toString()
-                binding.quotaLeft.text = (event.quota - event.registrants).toString()
-                Picasso
-                    .get()
-                    .load(event.mediaCover)
-                    .into(binding.ivMediaCoverEvent)
-                binding.btnRegister.setOnClickListener {
-                    val linkIntent = Intent(Intent.ACTION_VIEW)
-                    linkIntent.data = Uri.parse(event.link)
-                    startActivity(linkIntent)
+            it?.let { event ->
+                binding.apply {
+                    eventName.text = event.name
+                    eventDescription.text = HtmlCompat.fromHtml(
+                        event.description, HtmlCompat.FROM_HTML_MODE_LEGACY
+                    )
+                    ownerName.text = event.ownerName
+                    eventStartTime.text = event.beginTime
+                    eventEndTime.text = event.endTime
+                    eventQuota.text = event.quota.toString()
+                    quotaLeft.text = (event.quota - event.registrants).toString()
+                    Picasso
+                        .get()
+                        .load(event.mediaCover)
+                        .into(ivMediaCoverEvent)
+                    btnRegister.setOnClickListener {
+                        val linkIntent = Intent(Intent.ACTION_VIEW)
+                        linkIntent.data = Uri.parse(event.link)
+                        startActivity(linkIntent)
+                    }
                 }
             }
         }
@@ -56,37 +59,33 @@ class DetailActivity : AppCompatActivity() {
             showLoading(isLoading)
         }
 
-        viewModel.errorMessage.observe(this){errorMessage->
-            if(errorMessage != null) {
-                binding.errorMessage.text = errorMessage
-                binding.errorMessage.visibility = View.VISIBLE
-                binding.progressBar1.visibility = View.GONE
-                binding.ivMediaCoverEvent.visibility = View.GONE
-                binding.eventName.visibility = View.GONE
-                binding.eventDescription.visibility = View.GONE
-                binding.titleOwnerName.visibility = View.GONE
-                binding.ownerName.visibility = View.GONE
-                binding.schedule.visibility = View.GONE
-                binding.startEvent.visibility = View.GONE
-                binding.endEvent.visibility = View.GONE
-                binding.eventStartTime.visibility = View.GONE
-                binding.eventEndTime.visibility = View.GONE
-                binding.quotaTitle.visibility = View.GONE
-                binding.eventQuota.visibility = View.GONE
-                binding.quotaLeftTitle.visibility = View.GONE
-                binding.quotaLeft.visibility = View.GONE
-                binding.btnRegister.visibility = View.GONE
+        viewModel.errorMessage.observe(this) { errMessage ->
+            errMessage?.let {
+                binding.apply {
+                    errorMessage.text = it
+                    errorMessage.visibility = View.VISIBLE
+                    progressBar1.visibility = View.GONE
+                    ivMediaCoverEvent.visibility = View.GONE
+                    eventName.visibility = View.GONE
+                    eventDescription.visibility = View.GONE
+                    titleOwnerName.visibility = View.GONE
+                    ownerName.visibility = View.GONE
+                    schedule.visibility = View.GONE
+                    startEvent.visibility = View.GONE
+                    endEvent.visibility = View.GONE
+                    eventStartTime.visibility = View.GONE
+                    eventEndTime.visibility = View.GONE
+                    quotaTitle.visibility = View.GONE
+                    eventQuota.visibility = View.GONE
+                    quotaLeftTitle.visibility = View.GONE
+                    quotaLeft.visibility = View.GONE
+                    btnRegister.visibility = View.GONE
+                }
             }
         }
     }
 
-    private fun showLoading(isLoading : Boolean) {
-        if(isLoading) {
-            binding.progressBar1.visibility = View.VISIBLE
-        } else {
-            binding.progressBar1.visibility = View.GONE
-        }
-    }
+    private fun showLoading(isLoading : Boolean) = binding.progressBar1.isVisible == isLoading
 
     companion object {
         const val EVENT_ID = "event_id"
