@@ -35,8 +35,9 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/finished_event"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="200dp"
+        app:flow_verticalAlign="center"
         android:layout_marginStart="16dp"
         android:layout_marginTop="72dp"
         android:layout_marginEnd="16dp"
@@ -85,6 +86,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/upcoming_event"
         android:layout_width="0dp"
+        app:flow_horizontalAlign="center"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"

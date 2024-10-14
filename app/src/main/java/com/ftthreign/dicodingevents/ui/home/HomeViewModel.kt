@@ -37,9 +37,7 @@ class HomeViewModel : ViewModel() {
                         val eventList: List<EventOverview> = responseBody.listEvents.map {
                             EventOverview(it.mediaCover, it.name, it.id)
                         }.take(5)
-                        Log.d("UpcomingEvent", "image url ${responseBody.listEvents.map {
-                            it.mediaCover
-                        }}")
+
                         if(event == 1) {
                             _finishedEvent.value = eventList
                         } else if(event == 0) {

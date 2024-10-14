@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.finished_event.FinishedEventFragment">
 
-
     <TextView
         android:id="@+id/title_upcoming"
         style="@style/PageTitle"

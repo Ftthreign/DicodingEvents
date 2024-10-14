@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.ftthreign.dicodingevents.databinding.FragmentUpcomingEventBinding
 import com.ftthreign.dicodingevents.ui.adapter.EventAdapter
 
@@ -52,7 +53,7 @@ class UpcomingEventFragment : Fragment() {
         }
 
         adapter = EventAdapter()
-        binding.upcomingEvent.layoutManager = GridLayoutManager(context, 2)
+        binding.upcomingEvent.layoutManager = LinearLayoutManager(context)
         binding.upcomingEvent.adapter = adapter
 
         upcomingEventViewModel.findUpcomingEvent()

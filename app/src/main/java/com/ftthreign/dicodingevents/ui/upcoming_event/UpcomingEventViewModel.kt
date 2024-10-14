@@ -1,6 +1,5 @@
 package com.ftthreign.dicodingevents.ui.upcoming_event
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -15,7 +14,6 @@ class UpcomingEventViewModel : ViewModel() {
     private val _isLoading = MutableLiveData<Boolean>()
     private val _upcomingEvent = MutableLiveData<List<EventOverview>>()
     private val _errorMessage = MutableLiveData<String>()
-
 
     val isLoading : LiveData<Boolean> = _isLoading
     val upcomingEvent : LiveData<List<EventOverview>> = _upcomingEvent
@@ -36,9 +34,6 @@ class UpcomingEventViewModel : ViewModel() {
                         val eventList: List<EventOverview> = responseBody.listEvents.map {event->
                             EventOverview(event.mediaCover, event.name, event.id)
                         }
-                        Log.d("UpcomingEvent", "image url ${responseBody.listEvents.map {
-                            it.mediaCover
-                        }}")
                         _upcomingEvent.value = eventList
                     }
                 }
@@ -47,7 +42,6 @@ class UpcomingEventViewModel : ViewModel() {
             override fun onFailure(call: Call<EventsResponse>, t: Throwable) {
                 _errorMessage.value = t.message
             }
-
         })
     }
 }

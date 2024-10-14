@@ -85,7 +85,10 @@ class DetailActivity : AppCompatActivity() {
         }
     }
 
-    private fun showLoading(isLoading : Boolean) = binding.progressBar1.isVisible == isLoading
+    private fun showLoading(isLoading : Boolean) {
+        binding.progressBar1.visibility = if(isLoading) View.VISIBLE else View.GONE
+    }
+
 
     companion object {
         const val EVENT_ID = "event_id"

@@ -30,6 +30,7 @@ class DetailEventViewModel : ViewModel() {
             }
 
             override fun onFailure(call: Call<DetailEventsResponse>, t: Throwable) {
+                _isLoading.value = false
                 _errorMessage.value = t.message
             }
         })
