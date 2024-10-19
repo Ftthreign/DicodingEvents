@@ -52,7 +52,7 @@ class UpcomingEventFragment : Fragment() {
             }
         }
 
-        adapter = EventAdapter()
+        adapter = EventAdapter(EventAdapter.VIEW_TYPE_UPCOMING_AT_HOME)
         binding.upcomingEvent.layoutManager = LinearLayoutManager(context)
         binding.upcomingEvent.adapter = adapter
 

@@ -3,9 +3,9 @@ package com.ftthreign.dicodingevents.ui.detail
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.ftthreign.dicodingevents.data.response.Event
-import com.ftthreign.dicodingevents.data.retrofit.ApiConfig
-import com.ftthreign.dicodingevents.data.response.DetailEventsResponse
+import com.ftthreign.dicodingevents.data.remote.response.Event
+import com.ftthreign.dicodingevents.data.remote.retrofit.ApiConfig
+import com.ftthreign.dicodingevents.data.remote.response.DetailEventsResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

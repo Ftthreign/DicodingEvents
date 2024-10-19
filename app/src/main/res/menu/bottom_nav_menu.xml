@@ -15,5 +15,12 @@
         android:id="@+id/navigation_finished_event"
         android:icon="@drawable/outline_checklist_24"
         android:title="@string/bottom_title_finished_event" />
-
+    <item
+        android:id="@+id/navigation_favourite_event"
+        android:icon="@drawable/baseline_favorite_24"
+        android:title="@string/bottom_title_favourite_event"/>
+    <item
+        android:id="@+id/navigation_settings"
+        android:icon="@drawable/baseline_settings_24"
+        android:title="@string/bottom_title_settings"/>
 </menu>

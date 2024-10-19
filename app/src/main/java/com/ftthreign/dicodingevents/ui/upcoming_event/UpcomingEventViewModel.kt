@@ -3,9 +3,9 @@ package com.ftthreign.dicodingevents.ui.upcoming_event
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.ftthreign.dicodingevents.data.response.EventOverview
-import com.ftthreign.dicodingevents.data.response.EventsResponse
-import com.ftthreign.dicodingevents.data.retrofit.ApiConfig
+import com.ftthreign.dicodingevents.data.remote.response.EventOverview
+import com.ftthreign.dicodingevents.data.remote.response.EventsResponse
+import com.ftthreign.dicodingevents.data.remote.retrofit.ApiConfig
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -31,8 +31,8 @@ class UpcomingEventViewModel : ViewModel() {
                     _isLoading.value = false
                     val responseBody = response.body()
                     if(responseBody != null) {
-                        val eventList: List<EventOverview> = responseBody.listEvents.map {event->
-                            EventOverview(event.mediaCover, event.name, event.id)
+                        val eventList: List<EventOverview> = responseBody.listEvents.map { event->
+                            EventOverview(event.mediaCover, event.name, event.id, event.summary)
                         }
                         _upcomingEvent.value = eventList
                     }

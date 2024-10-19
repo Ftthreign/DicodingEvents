@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:scrollbarAlwaysDrawVerticalTrack="true"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".ui.home.HomeFragment">
 
     <TextView
@@ -36,16 +41,16 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/finished_event"
         android:layout_width="0dp"
-        android:layout_height="200dp"
-        app:flow_verticalAlign="center"
-        android:layout_marginStart="16dp"
+        android:scrollbarAlwaysDrawHorizontalTrack="true"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="72dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.522"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/layout_item" />
+        tools:listitem="@layout/layout_upcoming_home" />
 
     <View
         android:id="@+id/view"
@@ -60,6 +65,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/finished_event" />
+
 
     <TextView
         android:id="@+id/finished_event_title"
@@ -86,17 +92,16 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/upcoming_event"
         android:layout_width="0dp"
-        app:flow_horizontalAlign="center"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="64dp"
+        android:paddingBottom="20dp"
+        app:flow_horizontalAlign="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/finished_event_title"
+        app:layout_constraintTop_toBottomOf="@+id/finished_event"
         tools:layoutMode="clipBounds"
-        tools:listitem="@layout/layout_item" />
+        tools:listitem="@layout/layout_finished_home" />
 
     <TextView
         android:id="@+id/error_message"
@@ -125,3 +130,4 @@
         app:layout_constraintTop_toTopOf="@+id/upcoming_event" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

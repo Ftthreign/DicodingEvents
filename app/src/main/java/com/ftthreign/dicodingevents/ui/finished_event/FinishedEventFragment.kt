@@ -25,7 +25,7 @@ class FinishedEventFragment : Fragment() {
         _binding = FragmentFinishedEventBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        eventAdapter = EventAdapter()
+        eventAdapter = EventAdapter(EventAdapter.VIEW_TYPE_FINISHED_AT_HOME)
         binding.finishedEvent.layoutManager = LinearLayoutManager(context)
         binding.finishedEvent.adapter = eventAdapter
         finishedEventViewModel.findFinishedEvent()

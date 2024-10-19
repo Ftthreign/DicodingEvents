@@ -3,6 +3,8 @@
     <string name="title_home">Home</string>
     <string name="bottom_title_upcoming_event">Upcoming</string>
     <string name="bottom_title_finished_event">Finished</string>
+    <string name="bottom_title_favourite_event">Favourite Event</string>
+    <string name="bottom_title_settings">Settings</string>
     <string name="title_upcoming_event">Upcoming Event</string>
     <string name="title_finished_event">Finished Event</string>
     <string name="page_title_home">Dicoding Event</string>
@@ -11,7 +13,8 @@
     <string name="searchbar_hint">Masukkan Nama Event</string>
     <string name="error_message">Anda tidak terhubung dengan Internet :(</string>
 
-
+    <string name="dark_mode">Dark Mode</string>
+    <string name="notification">Enable Event Notification</string>
     <!--
             IMAGE CONTENT DESCRIPTION
     -->

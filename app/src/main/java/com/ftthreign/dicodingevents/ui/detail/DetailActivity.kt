@@ -7,7 +7,6 @@ import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.text.HtmlCompat
-import androidx.core.view.isVisible
 import com.ftthreign.dicodingevents.databinding.ActivityDetailBinding
 import com.squareup.picasso.Picasso
 

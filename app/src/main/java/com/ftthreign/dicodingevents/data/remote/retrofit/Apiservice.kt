@@ -1,7 +1,7 @@
-package com.ftthreign.dicodingevents.data.retrofit
+package com.ftthreign.dicodingevents.data.remote.retrofit
 
-import com.ftthreign.dicodingevents.data.response.EventsResponse
-import com.ftthreign.dicodingevents.data.response.DetailEventsResponse
+import com.ftthreign.dicodingevents.data.remote.response.EventsResponse
+import com.ftthreign.dicodingevents.data.remote.response.DetailEventsResponse
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path

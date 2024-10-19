@@ -1,4 +1,4 @@
-package com.ftthreign.dicodingevents.data.retrofit
+package com.ftthreign.dicodingevents.data.remote.retrofit
 
 import com.ftthreign.dicodingevents.BuildConfig
 import com.ftthreign.dicodingevents.BuildConfig.DEBUG

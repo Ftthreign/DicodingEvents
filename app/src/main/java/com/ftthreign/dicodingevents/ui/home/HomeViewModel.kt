@@ -4,9 +4,9 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.ftthreign.dicodingevents.data.response.EventOverview
-import com.ftthreign.dicodingevents.data.response.EventsResponse
-import com.ftthreign.dicodingevents.data.retrofit.ApiConfig
+import com.ftthreign.dicodingevents.data.remote.response.EventOverview
+import com.ftthreign.dicodingevents.data.remote.response.EventsResponse
+import com.ftthreign.dicodingevents.data.remote.retrofit.ApiConfig
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -35,7 +35,7 @@ class HomeViewModel : ViewModel() {
                     val responseBody = response.body()
                     if(responseBody != null) {
                         val eventList: List<EventOverview> = responseBody.listEvents.map {
-                            EventOverview(it.mediaCover, it.name, it.id)
+                            EventOverview(it.mediaCover, it.name, it.id, it.summary, it.imageLogo, it.cityName)
                         }.take(5)
 
                         if(event == 1) {

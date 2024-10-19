@@ -1,4 +1,4 @@
- package com.ftthreign.dicodingevents.data.response
+ package com.ftthreign.dicodingevents.data.remote.response
 
 import com.google.gson.annotations.SerializedName
 
@@ -16,13 +16,22 @@ data class EventsResponse(
 
 data class EventOverview(
 	@field:SerializedName("mediaCover")
-	val mediaCover: String,
+	val mediaCover: String? = null,
 
 	@field:SerializedName("name")
 	val name : String,
 
 	@field:SerializedName("id")
-	val id : Int
+	val id : Int,
+
+	@field:SerializedName("summary")
+	val summary: String? = null,
+
+	@field:SerializedName("imageLogo")
+	val imageLogo: String? = null,
+
+	@field:SerializedName("cityName")
+	val cityName: String? = null,
 )
 
 data class ListEventsItem(

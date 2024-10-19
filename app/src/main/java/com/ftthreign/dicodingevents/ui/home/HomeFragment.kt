@@ -9,6 +9,10 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ftthreign.dicodingevents.databinding.FragmentHomeBinding
 import com.ftthreign.dicodingevents.ui.adapter.EventAdapter
+import com.ftthreign.dicodingevents.ui.viewModels.MainViewModel
+import com.ftthreign.dicodingevents.ui.viewModels.ViewModelFactory
+import com.google.android.material.carousel.CarouselLayoutManager
+import com.google.android.material.carousel.CarouselSnapHelper
 
 class HomeFragment : Fragment() {
 
@@ -18,7 +22,9 @@ class HomeFragment : Fragment() {
     private lateinit var finishedAdapter: EventAdapter
     private lateinit var upcomingAdapter : EventAdapter
     private val homeViewModel by viewModels<HomeViewModel>()
-
+//    private val viewModel by viewModels<MainViewModel>{
+//        ViewModelFactory.getInstance(requireActivity())
+//}
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -75,10 +81,10 @@ class HomeFragment : Fragment() {
     }
 
     private fun setRv() {
-        upcomingAdapter = EventAdapter()
-        finishedAdapter = EventAdapter()
-        binding.upcomingEvent.layoutManager = LinearLayoutManager(context)
-        binding.finishedEvent.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        upcomingAdapter = EventAdapter(EventAdapter.VIEW_TYPE_FINISHED_AT_HOME)
+        finishedAdapter = EventAdapter(EventAdapter.VIEW_TYPE_UPCOMING_AT_HOME)
+        binding.finishedEvent.layoutManager =LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        binding.upcomingEvent.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         binding.upcomingEvent.adapter = upcomingAdapter
         binding.finishedEvent.adapter = finishedAdapter
     }

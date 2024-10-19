@@ -22,4 +22,18 @@
         android:name="com.ftthreign.dicodingevents.ui.finished_event.FinishedEventFragment"
         android:label="@string/title_finished_event"
         tools:layout="@layout/fragment_finished_event" />
+
+    <fragment
+        android:id="@+id/navigation_favourite_event"
+        android:name="com.ftthreign.dicodingevents.ui.favorite.FavouriteFragment"
+        android:label="@string/bottom_title_favourite_event"
+        tools:layout="@layout/fragment_favourite"/>
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.ftthreign.dicodingevents.ui.settings.SettingsFragment"
+        android:label="@string/bottom_title_settings"
+        tools:layout="@layout/fragment_settings"/>
+
+
 </navigation>
