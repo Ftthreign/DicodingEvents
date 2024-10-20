@@ -1,30 +1,23 @@
 package com.ftthreign.dicodingevents.data.remote.retrofit
 
 import com.ftthreign.dicodingevents.data.remote.response.EventsResponse
-import com.ftthreign.dicodingevents.data.remote.response.DetailEventsResponse
 import retrofit2.Call
 import retrofit2.http.GET
-import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface Apiservice {
     @GET("events")
-    fun getEvents(
+    suspend fun getEvents(
         @Query("active")
         active : Int
-    ) : Call<EventsResponse>
-
-    @GET("events/{id}")
-    fun getEventDetail(
-        @Path("id")
-        id: Int
-    ): Call<DetailEventsResponse>
+    ) : EventsResponse
 
     @GET("events")
-    fun searchEvents(
+    suspend fun getUpdatedEvent(
         @Query("active")
-        active: Int,
-        @Query("q")
-        query: String
-    ) : Call<EventsResponse>
+        active: Int = -1,
+        @Query("limit")
+        limit : Int = 40
+    )
+
 }

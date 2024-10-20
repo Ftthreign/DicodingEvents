@@ -32,7 +32,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title_upcoming"
-        tools:listitem="@layout/layout_item" />
+        tools:listitem="@layout/layout_upcoming_home" />
 
     <TextView
         android:id="@+id/error_message"

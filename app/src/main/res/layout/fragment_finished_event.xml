@@ -72,14 +72,11 @@
         android:id="@+id/finished_event"
         android:layout_width="0dp"
         android:layout_height="545dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchBar"
-        tools:listitem="@layout/layout_item" />
+        tools:listitem="@layout/layout_finished_home" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

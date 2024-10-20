@@ -18,14 +18,20 @@ navigationFragmentKtx = "2.8.2"
 navigationUiKtx = "2.8.2"
 activity = "1.9.2"
 picassoVersion = "2.8"
+preference = "1.2.1"
 retrofit = "2.9.0"
 legacySupportV4 = "1.0.0"
 fragmentKtx = "1.8.4"
 legacySupportV13 = "1.0.0"
+roomRuntime = "2.6.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastorePreferences" }
+androidx-preference = { module = "androidx.preference:preference", version.ref = "preference" }
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomRuntime" }
+androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomRuntime" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }

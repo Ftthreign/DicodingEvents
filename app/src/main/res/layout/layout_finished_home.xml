@@ -5,10 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    android:background="?attr/selectableItemBackground"
     android:clickable="true"
     android:focusable="true"
-    app:cardBackgroundColor="@color/white"
     tools:ignore="Overdraw">
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
@@ -49,15 +47,6 @@
         app:layout_constraintTop_toBottomOf="@+id/data_title"
         tools:text="city" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
-        android:contentDescription="@string/title_finished_event"
-        android:src="@drawable/ic_border_favorite"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>
