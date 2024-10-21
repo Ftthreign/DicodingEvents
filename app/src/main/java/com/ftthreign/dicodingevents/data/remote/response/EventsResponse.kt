@@ -7,31 +7,8 @@ data class EventsResponse(
 	@field:SerializedName("listEvents")
 	val listEvents: List<ListEventsItem>,
 
-	@field:SerializedName("error")
-	val error: Boolean,
-
 	@field:SerializedName("message")
 	val message: String
-)
-
-data class EventOverview(
-	@field:SerializedName("mediaCover")
-	val mediaCover: String? = null,
-
-	@field:SerializedName("name")
-	val name : String,
-
-	@field:SerializedName("id")
-	val id : Int,
-
-	@field:SerializedName("summary")
-	val summary: String? = null,
-
-	@field:SerializedName("imageLogo")
-	val imageLogo: String? = null,
-
-	@field:SerializedName("cityName")
-	val cityName: String? = null,
 )
 
 data class ListEventsItem(
