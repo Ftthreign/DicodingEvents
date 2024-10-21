@@ -69,7 +69,6 @@ class FinishedEventFragment : Fragment() {
                     false
                 }
         }
-
         return root
     }
 

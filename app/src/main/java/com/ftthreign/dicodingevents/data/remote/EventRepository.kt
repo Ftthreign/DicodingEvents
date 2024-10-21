@@ -5,6 +5,7 @@ import androidx.lifecycle.liveData
 import androidx.lifecycle.map
 import com.ftthreign.dicodingevents.data.local.entity.EventEntity
 import com.ftthreign.dicodingevents.data.local.room.EventDao
+import com.ftthreign.dicodingevents.data.remote.response.EventsResponse
 import com.ftthreign.dicodingevents.data.remote.retrofit.Apiservice
 import com.ftthreign.dicodingevents.helper.AppExecutors
 import com.ftthreign.dicodingevents.helper.Result
@@ -83,6 +84,15 @@ class EventRepository private constructor(
         withContext(appExecutors.diskIO.asCoroutineDispatcher()) {
             eventDao.updateEventsData(event)
         }
+    }
+
+    suspend fun getNearestEvent() : EventsResponse? {
+        val getEvent =  try {
+            apiService.getUpdatedEvent(active = -1, limit = 1)
+        } catch (e: Exception) {
+            null
+        }
+        return getEvent
     }
 
     companion object {

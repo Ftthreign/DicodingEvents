@@ -23,7 +23,15 @@ class MainViewModel(
             settingPreferences.saveThemeSetting(isDarkMode)
         }
     }
+    fun getNotificationSetting(): LiveData<Boolean> {
+        return settingPreferences.getNotificationSetting().asLiveData()
+    }
 
+    fun saveNotificationSetting(isActive: Boolean) {
+        viewModelScope.launch {
+            settingPreferences.saveNotificationSetting(isActive)
+        }
+    }
     fun searchEvent(query : String) : LiveData<Result<List<EventEntity>>> {
         return eventRepository.searchEvent(query)
     }

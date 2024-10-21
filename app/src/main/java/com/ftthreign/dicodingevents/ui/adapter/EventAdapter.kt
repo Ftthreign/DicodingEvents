@@ -67,9 +67,6 @@ DIFF_CALLBACK) {
         }
     }
 
-
-
-
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val event = getItem(position)
         when (holder) {
@@ -82,7 +79,6 @@ DIFF_CALLBACK) {
 
     }
 
-
     companion object {
         const val VIEW_TYPE_UPCOMING_AT_HOME = 1
         const val VIEW_TYPE_FINISHED_AT_HOME = 2
@@ -90,7 +86,6 @@ DIFF_CALLBACK) {
             override fun areItemsTheSame(oldItem: EventEntity, newItem: EventEntity): Boolean {
                 return oldItem == newItem
             }
-
             override fun areContentsTheSame(
                 oldItem: EventEntity,
                 newItem: EventEntity

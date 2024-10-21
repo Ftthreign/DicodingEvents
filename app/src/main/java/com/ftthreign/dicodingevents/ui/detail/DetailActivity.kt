@@ -3,6 +3,7 @@ package com.ftthreign.dicodingevents.ui.detail
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -34,6 +35,7 @@ class DetailActivity : AppCompatActivity() {
     private fun observeViewModel(event: EventEntity) {
         binding.apply {
             changeFavouriteIcon(event.isFavourite)
+            progressBar1.visibility = View.GONE
             eventName.text = event.name
             eventDescription.text = HtmlCompat.fromHtml(
                 event.description, HtmlCompat.FROM_HTML_MODE_LEGACY
