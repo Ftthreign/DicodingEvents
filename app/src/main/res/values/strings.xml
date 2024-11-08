@@ -10,7 +10,7 @@
     <string name="page_title_home">Dicoding Event</string>
     <style name="page_title_upcoming">Upcoming Event</style>
     <string name="page_title_finished">Finished Event</string>
-    <string name="searchbar_hint">Masukkan Nama Event</string>
+    <string name="searchbar_hint">Cari Eventt</string>
     <string name="error_message">Anda tidak terhubung dengan Internet :(</string>
     <string name="empty_data">Anda belum menambahkan event ke Favorit, silahkan tambahkan Event ke Favorit</string>
 
